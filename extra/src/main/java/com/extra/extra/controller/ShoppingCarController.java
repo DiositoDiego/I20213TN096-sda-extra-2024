@@ -1,6 +1,5 @@
 package com.extra.extra.controller;
 
-import com.extra.extra.dto.ShoppingCarDto;
 import com.extra.extra.model.ShoppingCar;
 import com.extra.extra.service.ShoppingCarService;
 import com.extra.extra.utils.Misc;

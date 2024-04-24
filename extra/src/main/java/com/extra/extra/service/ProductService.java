@@ -30,7 +30,7 @@ public class ProductService {
         return productRepository.findByCodigo(code);
     }
 
-    public Product updateProduct(Product product){
+    public Product updateProduct(ProductDto product){
         if(product.getId() == null){
             throw new RuntimeException("El producto no tiene id");
         }
@@ -38,7 +38,7 @@ public class ProductService {
         if(productFound.isEmpty()){
             throw new RuntimeException("El producto no existe");
         }
-        return productRepository.save(product);
+        return productRepository.save(product.build());
     }
 
     public void deleteProduct(Long id){

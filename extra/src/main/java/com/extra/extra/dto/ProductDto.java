@@ -1,6 +1,7 @@
 package com.extra.extra.dto;
 
 import com.extra.extra.model.Product;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Positive;
@@ -16,9 +17,10 @@ import java.util.ArrayList;
 @Data
 public class ProductDto {
     Long id;
-    @Null
+    @NotBlank(message = "El codigo es obligatorio")
     @Length(min = 4, max = 10, message = "El código debe tener entre 4 y 10 caracteres")
     String codigo;
+    @NotBlank(message = "El nombre es obligatorio")
     @Length(min = 1, max = 30, message = "El nombre debe tener entre 1 y 30 caracteres")
     String nombre;
     @NotNull(message = "El precio es obligatorio")

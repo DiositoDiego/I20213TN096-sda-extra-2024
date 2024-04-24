@@ -82,10 +82,10 @@ public class ProductController {
     }
 
     @PutMapping
-    public ResponseApi<Product> updateProduct(@RequestBody Product product) {
+    public ResponseApi<Product> updateProduct(@RequestBody ProductDto productDto) {
         ResponseApi<Product> response = new ResponseApi<>();
         try {
-            response.setData(productService.updateProduct(product));
+            response.setData(productService.updateProduct(productDto));
             response.setStatus(200);
             response.setMessage("success");
         } catch (ConstraintViolationException e) {
